@@ -1,6 +1,6 @@
-import DeployServerWebpackPlugin from 'deploy-server-webpack-plugin'
+// import DeployServerWebpackPlugin from 'deploy-server-webpack-plugin'
 
-const path = require('path');
+// const path = require('path');
 
 export default {
   treeShaking: true,
@@ -18,7 +18,16 @@ export default {
         chunkFilename: 'static/css/[name].chunk.css'
       }]
     })
-    
+    // config.plugin('deploy-server').use(DeployServerWebpackPlugin, [{
+    //   receiver: '',
+    //   mapping: [
+    //     {
+    //       from: path.resolve(__dirname, './dist'),
+    //       dest: ''
+    //     },
+    //   ],
+    //   // token: '4e85bf9a5f3f31d30121730d1a5833c6a897c5f09e47e8cf4b2a9de4baaa9f1a3618efb14f41867cd1d8de47664561499916dc1cee44c4ed0a406f23cd3fc40e'
+    // }])
     config.module.rule('exclude').use('url-loader').tap(options => {
       return {
         limit: 10000,
