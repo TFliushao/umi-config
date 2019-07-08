@@ -1,5 +1,4 @@
 const Layout = ({ children }) => {
-  console.log('layout', children)
   return (
     <div>
       {children}

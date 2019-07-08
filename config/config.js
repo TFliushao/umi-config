@@ -1,6 +1,4 @@
-// import DeployServerWebpackPlugin from 'deploy-server-webpack-plugin'
-
-// const path = require('path');
+import { routes } from '../src/router.js'
 
 export default {
   treeShaking: true,
@@ -11,6 +9,7 @@ export default {
   // hash: true,
   disableRedirectHoist: true,
   disableCSSSourceMap: true,
+  routes: routes,
   chainWebpack(config, plugin) {
     config.plugin('extract-css').tap(() => {
       return [{
